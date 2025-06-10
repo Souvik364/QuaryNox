@@ -339,8 +339,20 @@
             </div>
         </div>
     </footer>
-    
     <!-- JavaScript -->
     <script src="js/main.js"></script>
+<script>
+  const openBtn = document.getElementById("openMenuBtn");
+  const closeBtn = document.getElementById("closeMenuBtn");
+  const mobileNav = document.querySelector(".mobile-nav");
+
+  openBtn.addEventListener("click", () => {
+    mobileNav.classList.remove("hidden");
+  });
+
+  closeBtn.addEventListener("click", () => {
+    mobileNav.classList.add("hidden");
+  });
+</script>
 </body>
 </html>
