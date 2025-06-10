@@ -1,0 +1,875 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore QUARYNOX tools - PYQ Downloader, Study Materials, Academic Calculators, and more to enhance your learning experience">
+    <meta name="keywords" content="QUARYNOX tools, PYQ downloader, study materials, academic calculator, unit converter, citation generator">
+    <meta name="author" content="QUARYNOX">
+    <title>Educational Tools - QUARYNOX</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>QUARYNOX</h1>
+            </div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="tools.html" class="active">Tools</a></li>
+                    <li><a href="feedback.html">Feedback</a></li>
+                </ul>
+            </nav>
+            <div class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Mobile Navigation -->
+    <div class="mobile-nav">
+        <div class="mobile-nav-header">
+            <div class="logo">
+                <h1>QUARYNOX</h1>
+            </div>
+            <div class="close-menu-btn">
+                <i class="fas fa-times"></i>
+            </div>
+        </div>
+        <ul class="mobile-nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="tools.html" class="active">Tools</a></li>
+            <li><a href="feedback.html">Feedback</a></li>
+        </ul>
+    </div>
+    
+    <!-- Page Banner -->
+    <section class="page-banner">
+        <div class="container">
+            <h1>Educational Tools</h1>
+            <p>Powerful tools to enhance your academic journey and simplify your learning experience</p>
+        </div>
+    </section>
+    
+    <!-- Tools Search Section -->
+    <section class="tools-search-section">
+        <div class="container">
+            <div class="search-container">
+                <input type="text" id="tool-search" placeholder="Search for tools...">
+                <button class="search-btn"><i class="fas fa-search"></i></button>
+            </div>
+            <div class="tools-filter">
+                <button class="filter-btn active" data-filter="all">All Tools</button>
+                <button class="filter-btn" data-filter="pyq">PYQ</button>
+                <button class="filter-btn" data-filter="study">Study Materials</button>
+                <button class="filter-btn" data-filter="calculator">Calculators</button>
+                <button class="filter-btn" data-filter="converter">Converters</button>
+                <button class="filter-btn" data-filter="citation">Citations</button>
+            </div>
+        </div>
+    </section>
+    
+    <!-- PYQ Downloader Tool -->
+    <section class="tool-section" id="pyq-downloader" data-category="pyq">
+        <div class="container">
+            <div class="section-header">
+                <h2>PYQ Downloader</h2>
+                <p>Access and download previous year question papers from various universities and boards</p>
+            </div>
+            <div class="tool-container">
+                <div class="tool-sidebar">
+                    <div class="filter-group">
+                        <h3>University/Board</h3>
+                        <select id="university-select">
+                            <option value="">Select University/Board</option>
+                            <option value="delhi">Delhi University</option>
+                            <option value="mumbai">Mumbai University</option>
+                            <option value="cbse">CBSE</option>
+                            <option value="icse">ICSE</option>
+                            <option value="jee">JEE</option>
+                            <option value="neet">NEET</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <h3>Course/Class</h3>
+                        <select id="course-select" disabled>
+                            <option value="">Select Course/Class</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <h3>Subject</h3>
+                        <select id="subject-select" disabled>
+                            <option value="">Select Subject</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <h3>Year</h3>
+                        <select id="year-select" disabled>
+                            <option value="">Select Year</option>
+                        </select>
+                    </div>
+                    <button class="btn primary-btn search-pyq-btn" disabled>Search Papers</button>
+                </div>
+                <div class="tool-content">
+                    <div class="pyq-results">
+                        <div class="empty-state">
+                            <img src="images/empty-state.svg" alt="No Results">
+                            <p>Select filters to find question papers</p>
+                        </div>
+                        <div class="results-grid" style="display: none;">
+                            <!-- Results will be dynamically populated here -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Study Materials Tool -->
+    <section class="tool-section" id="study-materials" data-category="study">
+        <div class="container">
+            <div class="section-header">
+                <h2>Study Materials</h2>
+                <p>Access comprehensive study notes, guides, and resources for various subjects</p>
+            </div>
+            <div class="tool-container">
+                <div class="tool-sidebar">
+                    <div class="filter-group">
+                        <h3>Category</h3>
+                        <select id="category-select">
+                            <option value="">Select Category</option>
+                            <option value="notes">Class Notes</option>
+                            <option value="guides">Study Guides</option>
+                            <option value="summaries">Chapter Summaries</option>
+                            <option value="formulas">Formula Sheets</option>
+                            <option value="diagrams">Diagrams & Charts</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <h3>Subject</h3>
+                        <select id="study-subject-select">
+                            <option value="">Select Subject</option>
+                            <option value="math">Mathematics</option>
+                            <option value="physics">Physics</option>
+                            <option value="chemistry">Chemistry</option>
+                            <option value="biology">Biology</option>
+                            <option value="history">History</option>
+                            <option value="geography">Geography</option>
+                            <option value="english">English</option>
+                            <option value="computer">Computer Science</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <h3>Level</h3>
+                        <select id="level-select">
+                            <option value="">Select Level</option>
+                            <option value="high-school">High School</option>
+                            <option value="undergraduate">Undergraduate</option>
+                            <option value="graduate">Graduate</option>
+                        </select>
+                    </div>
+                    <button class="btn primary-btn search-materials-btn">Search Materials</button>
+                </div>
+                <div class="tool-content">
+                    <div class="materials-results">
+                        <div class="materials-grid">
+                            <div class="material-card">
+                                <div class="material-icon">
+                                    <i class="fas fa-file-pdf"></i>
+                                </div>
+                                <div class="material-info">
+                                    <h3>Physics Formulas - Mechanics</h3>
+                                    <p>Comprehensive formula sheet for mechanics section</p>
+                                    <div class="material-meta">
+                                        <span><i class="fas fa-graduation-cap"></i> Undergraduate</span>
+                                        <span><i class="fas fa-star"></i> 4.8/5</span>
+                                    </div>
+                                </div>
+                                <a href="#" class="btn outline-btn">View</a>
+                            </div>
+                            <div class="material-card">
+                                <div class="material-icon">
+                                    <i class="fas fa-file-pdf"></i>
+                                </div>
+                                <div class="material-info">
+                                    <h3>Organic Chemistry Notes</h3>
+                                    <p>Detailed notes on organic reactions and mechanisms</p>
+                                    <div class="material-meta">
+                                        <span><i class="fas fa-graduation-cap"></i> Undergraduate</span>
+                                        <span><i class="fas fa-star"></i> 4.6/5</span>
+                                    </div>
+                                </div>
+                                <a href="#" class="btn outline-btn">View</a>
+                            </div>
+                            <div class="material-card">
+                                <div class="material-icon">
+                                    <i class="fas fa-file-pdf"></i>
+                                </div>
+                                <div class="material-info">
+                                    <h3>Calculus Study Guide</h3>
+                                    <p>Comprehensive guide covering differentiation and integration</p>
+                                    <div class="material-meta">
+                                        <span><i class="fas fa-graduation-cap"></i> Undergraduate</span>
+                                        <span><i class="fas fa-star"></i> 4.9/5</span>
+                                    </div>
+                                </div>
+                                <a href="#" class="btn outline-btn">View</a>
+                            </div>
+                            <div class="material-card">
+                                <div class="material-icon">
+                                    <i class="fas fa-file-pdf"></i>
+                                </div>
+                                <div class="material-info">
+                                    <h3>Computer Science Algorithms</h3>
+                                    <p>Notes on common algorithms and data structures</p>
+                                    <div class="material-meta">
+                                        <span><i class="fas fa-graduation-cap"></i> Undergraduate</span>
+                                        <span><i class="fas fa-star"></i> 4.7/5</span>
+                                    </div>
+                                </div>
+                                <a href="#" class="btn outline-btn">View</a>
+                            </div>
+                        </div>
+                        <div class="pagination">
+                            <button class="pagination-btn active">1</button>
+                            <button class="pagination-btn">2</button>
+                            <button class="pagination-btn">3</button>
+                            <button class="pagination-btn next"><i class="fas fa-chevron-right"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Academic Calculator Tool -->
+    <section class="tool-section" id="academic-calculator" data-category="calculator">
+        <div class="container">
+            <div class="section-header">
+                <h2>Academic Calculator</h2>
+                <p>Calculate GPA, CGPA, percentage, and other academic metrics</p>
+            </div>
+            <div class="calculator-tabs">
+                <div class="tab-buttons">
+                    <button class="tab-btn active" data-tab="gpa-calculator">GPA Calculator</button>
+                    <button class="tab-btn" data-tab="cgpa-calculator">CGPA Calculator</button>
+                    <button class="tab-btn" data-tab="percentage-calculator">Percentage Calculator</button>
+                </div>
+                <div class="tab-content">
+                    <!-- GPA Calculator Tab -->
+                    <div class="tab-pane active" id="gpa-calculator">
+                        <div class="calculator-form">
+                            <div class="form-group">
+                                <label for="grading-system">Grading System</label>
+                                <select id="grading-system">
+                                    <option value="4">4.0 Scale</option>
+                                    <option value="10">10.0 Scale</option>
+                                </select>
+                            </div>
+                            <div class="courses-container">
+                                <div class="course-row">
+                                    <div class="form-group">
+                                        <label>Course Name</label>
+                                        <input type="text" placeholder="e.g. Mathematics">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Credits</label>
+                                        <input type="number" min="1" max="6" value="3">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Grade</label>
+                                        <select class="grade-select">
+                                            <option value="4.0">A (4.0)</option>
+                                            <option value="3.7">A- (3.7)</option>
+                                            <option value="3.3">B+ (3.3)</option>
+                                            <option value="3.0">B (3.0)</option>
+                                            <option value="2.7">B- (2.7)</option>
+                                            <option value="2.3">C+ (2.3)</option>
+                                            <option value="2.0">C (2.0)</option>
+                                            <option value="1.7">C- (1.7)</option>
+                                            <option value="1.3">D+ (1.3)</option>
+                                            <option value="1.0">D (1.0)</option>
+                                            <option value="0.0">F (0.0)</option>
+                                        </select>
+                                    </div>
+                                    <button class="remove-course-btn" style="display: none;"><i class="fas fa-times"></i></button>
+                                </div>
+                            </div>
+                            <button class="btn outline-btn add-course-btn"><i class="fas fa-plus"></i> Add Course</button>
+                            <button class="btn primary-btn calculate-gpa-btn">Calculate GPA</button>
+                            <div class="result-container" style="display: none;">
+                                <h3>Your GPA</h3>
+                                <div class="result-value">0.00</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- CGPA Calculator Tab -->
+                    <div class="tab-pane" id="cgpa-calculator">
+                        <div class="calculator-form">
+                            <div class="form-group">
+                                <label for="cgpa-grading-system">Grading System</label>
+                                <select id="cgpa-grading-system">
+                                    <option value="4">4.0 Scale</option>
+                                    <option value="10">10.0 Scale</option>
+                                </select>
+                            </div>
+                            <div class="semesters-container">
+                                <div class="semester-row">
+                                    <div class="form-group">
+                                        <label>Semester</label>
+                                        <input type="text" placeholder="e.g. Semester 1" value="Semester 1" readonly>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Credits</label>
+                                        <input type="number" min="1" max="30" value="20">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>GPA</label>
+                                        <input type="number" min="0" max="4" step="0.01" placeholder="0.00">
+                                    </div>
+                                    <button class="remove-semester-btn" style="display: none;"><i class="fas fa-times"></i></button>
+                                </div>
+                            </div>
+                            <button class="btn outline-btn add-semester-btn"><i class="fas fa-plus"></i> Add Semester</button>
+                            <button class="btn primary-btn calculate-cgpa-btn">Calculate CGPA</button>
+                            <div class="result-container" style="display: none;">
+                                <h3>Your CGPA</h3>
+                                <div class="result-value">0.00</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Percentage Calculator Tab -->
+                    <div class="tab-pane" id="percentage-calculator">
+                        <div class="calculator-form">
+                            <div class="form-group">
+                                <label for="calculation-type">Calculation Type</label>
+                                <select id="calculation-type">
+                                    <option value="marks-to-percentage">Marks to Percentage</option>
+                                    <option value="percentage-to-gpa">Percentage to GPA</option>
+                                    <option value="gpa-to-percentage">GPA to Percentage</option>
+                                </select>
+                            </div>
+                            <div class="marks-to-percentage-form">
+                                <div class="form-group">
+                                    <label>Marks Obtained</label>
+                                    <input type="number" id="marks-obtained" min="0">
+                                </div>
+                                <div class="form-group">
+                                    <label>Total Marks</label>
+                                    <input type="number" id="total-marks" min="1" value="100">
+                                </div>
+                            </div>
+                            <button class="btn primary-btn calculate-percentage-btn">Calculate</button>
+                            <div class="result-container" style="display: none;">
+                                <h3>Result</h3>
+                                <div class="result-value">0.00%</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Unit Converter Tool -->
+    <section class="tool-section" id="unit-converter" data-category="converter">
+        <div class="container">
+            <div class="section-header">
+                <h2>Unit Converter</h2>
+                <p>Convert between different units of measurement for academic and scientific calculations</p>
+            </div>
+            <div class="converter-tabs">
+                <div class="tab-buttons">
+                    <button class="tab-btn active" data-tab="length-converter">Length</button>
+                    <button class="tab-btn" data-tab="weight-converter">Weight</button>
+                    <button class="tab-btn" data-tab="temperature-converter">Temperature</button>
+                </div>
+                <div class="tab-content">
+                    <!-- Length Converter Tab -->
+                    <div class="tab-pane active" id="length-converter">
+                        <div class="converter-form">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label>From</label>
+                                    <input type="number" id="length-value" min="0" step="0.01" value="1">
+                                </div>
+                                <div class="form-group">
+                                    <label>&nbsp;</label>
+                                    <select id="length-from-unit">
+                                        <option value="m">Meters (m)</option>
+                                        <option value="km">Kilometers (km)</option>
+                                        <option value="cm">Centimeters (cm)</option>
+                                        <option value="mm">Millimeters (mm)</option>
+                                        <option value="in">Inches (in)</option>
+                                        <option value="ft">Feet (ft)</option>
+                                        <option value="yd">Yards (yd)</option>
+                                        <option value="mi">Miles (mi)</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label>To</label>
+                                    <input type="number" id="length-result" readonly>
+                                </div>
+                                <div class="form-group">
+                                    <label>&nbsp;</label>
+                                    <select id="length-to-unit">
+                                        <option value="m">Meters (m)</option>
+                                        <option value="km">Kilometers (km)</option>
+                                        <option value="cm" selected>Centimeters (cm)</option>
+                                        <option value="mm">Millimeters (mm)</option>
+                                        <option value="in">Inches (in)</option>
+                                        <option value="ft">Feet (ft)</option>
+                                        <option value="yd">Yards (yd)</option>
+                                        <option value="mi">Miles (mi)</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <button class="btn primary-btn convert-length-btn">Convert</button>
+                            <div class="conversion-formula">
+                                <h4>Conversion Formula:</h4>
+                                <p id="length-formula">1 meter = 100 centimeters</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Weight Converter Tab -->
+                    <div class="tab-pane" id="weight-converter">
+                        <div class="converter-form">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label>From</label>
+                                    <input type="number" id="weight-value" min="0" step="0.01" value="1">
+                                </div>
+                                <div class="form-group">
+                                    <label>&nbsp;</label>
+                                    <select id="weight-from-unit">
+                                        <option value="kg">Kilograms (kg)</option>
+                                        <option value="g">Grams (g)</option>
+                                        <option value="mg">Milligrams (mg)</option>
+                                        <option value="lb">Pounds (lb)</option>
+                                        <option value="oz">Ounces (oz)</option>
+                                        <option value="ton">Metric Tons (t)</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label>To</label>
+                                    <input type="number" id="weight-result" readonly>
+                                </div>
+                                <div class="form-group">
+                                    <label>&nbsp;</label>
+                                    <select id="weight-to-unit">
+                                        <option value="kg">Kilograms (kg)</option>
+                                        <option value="g" selected>Grams (g)</option>
+                                        <option value="mg">Milligrams (mg)</option>
+                                        <option value="lb">Pounds (lb)</option>
+                                        <option value="oz">Ounces (oz)</option>
+                                        <option value="ton">Metric Tons (t)</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <button class="btn primary-btn convert-weight-btn">Convert</button>
+                            <div class="conversion-formula">
+                                <h4>Conversion Formula:</h4>
+                                <p id="weight-formula">1 kilogram = 1000 grams</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Temperature Converter Tab -->
+                    <div class="tab-pane" id="temperature-converter">
+                        <div class="converter-form">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label>From</label>
+                                    <input type="number" id="temp-value" step="0.01" value="0">
+                                </div>
+                                <div class="form-group">
+                                    <label>&nbsp;</label>
+                                    <select id="temp-from-unit">
+                                        <option value="c">Celsius (°C)</option>
+                                        <option value="f">Fahrenheit (°F)</option>
+                                        <option value="k">Kelvin (K)</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label>To</label>
+                                    <input type="number" id="temp-result" readonly>
+                                </div>
+                                <div class="form-group">
+                                    <label>&nbsp;</label>
+                                    <select id="temp-to-unit">
+                                        <option value="c">Celsius (°C)</option>
+                                        <option value="f" selected>Fahrenheit (°F)</option>
+                                        <option value="k">Kelvin (K)</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <button class="btn primary-btn convert-temp-btn">Convert</button>
+                            <div class="conversion-formula">
+                                <h4>Conversion Formula:</h4>
+                                <p id="temp-formula">°F = (°C × 9/5) + 32</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Citation Generator Tool -->
+    <section class="tool-section" id="citation-generator" data-category="citation">
+        <div class="container">
+            <div class="section-header">
+                <h2>Citation Generator</h2>
+                <p>Generate properly formatted citations for your academic papers and research</p>
+            </div>
+            <div class="citation-tabs">
+                <div class="tab-buttons">
+                    <button class="tab-btn active" data-tab="apa-citation">APA</button>
+                    <button class="tab-btn" data-tab="mla-citation">MLA</button>
+                    <button class="tab-btn" data-tab="chicago-citation">Chicago</button>
+                </div>
+                <div class="tab-content">
+                    <!-- APA Citation Tab -->
+                    <div class="tab-pane active" id="apa-citation">
+                        <div class="citation-form">
+                            <div class="form-group">
+                                <label>Source Type</label>
+                                <select id="apa-source-type">
+                                    <option value="book">Book</option>
+                                    <option value="journal">Journal Article</option>
+                                    <option value="website">Website</option>
+                                    <option value="newspaper">Newspaper</option>
+                                </select>
+                            </div>
+                            <div class="source-fields book-fields">
+                                <div class="form-group">
+                                    <label>Author(s)</label>
+                                    <input type="text" id="apa-book-author" placeholder="Last, F. M.">
+                                </div>
+                                <div class="form-group">
+                                    <label>Publication Year</label>
+                                    <input type="text" id="apa-book-year" placeholder="YYYY">
+                                </div>
+                                <div class="form-group">
+                                    <label>Title</label>
+                                    <input type="text" id="apa-book-title" placeholder="Title of the book">
+                                </div>
+                                <div class="form-group">
+                                    <label>Publisher</label>
+                                    <input type="text" id="apa-book-publisher" placeholder="Publisher Name">
+                                </div>
+                            </div>
+                            <button class="btn primary-btn generate-citation-btn">Generate Citation</button>
+                            <div class="citation-result">
+                                <h3>APA Citation</h3>
+                                <div class="citation-text" id="apa-citation-result">
+                                    <p>Your citation will appear here.</p>
+                                </div>
+                                <button class="btn outline-btn copy-citation-btn"><i class="fas fa-copy"></i> Copy Citation</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- MLA Citation Tab -->
+                    <div class="tab-pane" id="mla-citation">
+                        <div class="citation-form">
+                            <div class="form-group">
+                                <label>Source Type</label>
+                                <select id="mla-source-type">
+                                    <option value="book">Book</option>
+                                    <option value="journal">Journal Article</option>
+                                    <option value="website">Website</option>
+                                    <option value="newspaper">Newspaper</option>
+                                </select>
+                            </div>
+                            <div class="source-fields book-fields">
+                                <div class="form-group">
+                                    <label>Author(s)</label>
+                                    <input type="text" id="mla-book-author" placeholder="Last Name, First Name">
+                                </div>
+                                <div class="form-group">
+                                    <label>Title</label>
+                                    <input type="text" id="mla-book-title" placeholder="Title of the Book">
+                                </div>
+                                <div class="form-group">
+                                    <label>Publisher</label>
+                                    <input type="text" id="mla-book-publisher" placeholder="Publisher Name">
+                                </div>
+                                <div class="form-group">
+                                    <label>Publication Year</label>
+                                    <input type="text" id="mla-book-year" placeholder="YYYY">
+                                </div>
+                            </div>
+                            <button class="btn primary-btn generate-citation-btn">Generate Citation</button>
+                            <div class="citation-result">
+                                <h3>MLA Citation</h3>
+                                <div class="citation-text" id="mla-citation-result">
+                                    <p>Your citation will appear here.</p>
+                                </div>
+                                <button class="btn outline-btn copy-citation-btn"><i class="fas fa-copy"></i> Copy Citation</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Chicago Citation Tab -->
+                    <div class="tab-pane" id="chicago-citation">
+                        <div class="citation-form">
+                            <div class="form-group">
+                                <label>Source Type</label>
+                                <select id="chicago-source-type">
+                                    <option value="book">Book</option>
+                                    <option value="journal">Journal Article</option>
+                                    <option value="website">Website</option>
+                                    <option value="newspaper">Newspaper</option>
+                                </select>
+                            </div>
+                            <div class="source-fields book-fields">
+                                <div class="form-group">
+                                    <label>Author(s)</label>
+                                    <input type="text" id="chicago-book-author" placeholder="Last Name, First Name">
+                                </div>
+                                <div class="form-group">
+                                    <label>Title</label>
+                                    <input type="text" id="chicago-book-title" placeholder="Title of the Book">
+                                </div>
+                                <div class="form-group">
+                                    <label>Publisher</label>
+                                    <input type="text" id="chicago-book-publisher" placeholder="Publisher Name">
+                                </div>
+                                <div class="form-group">
+                                    <label>Publication Year</label>
+                                    <input type="text" id="chicago-book-year" placeholder="YYYY">
+                                </div>
+                                <div class="form-group">
+                                    <label>City of Publication</label>
+                                    <input type="text" id="chicago-book-city" placeholder="City Name">
+                                </div>
+                            </div>
+                            <button class="btn primary-btn generate-citation-btn">Generate Citation</button>
+                            <div class="citation-result">
+                                <h3>Chicago Citation</h3>
+                                <div class="citation-text" id="chicago-citation-result">
+                                    <p>Your citation will appear here.</p>
+                                </div>
+                                <button class="btn outline-btn copy-citation-btn"><i class="fas fa-copy"></i> Copy Citation</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- All Tools Section -->
+    <section class="all-tools-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>All Tools</h2>
+                <p>Explore our complete collection of educational tools</p>
+            </div>
+            <div class="tools-grid">
+                <div class="tool-card" data-category="pyq">
+                    <div class="tool-icon">
+                        <i class="fas fa-file-download"></i>
+                    </div>
+                    <h3>PYQ Downloader</h3>
+                    <p>Download previous year question papers</p>
+                    <a href="#pyq-downloader" class="btn outline-btn">Use Tool</a>
+                </div>
+                <div class="tool-card" data-category="study">
+                    <div class="tool-icon">
+                        <i class="fas fa-book"></i>
+                    </div>
+                    <h3>Study Materials</h3>
+                    <p>Access comprehensive study resources</p>
+                    <a href="#study-materials" class="btn outline-btn">Use Tool</a>
+                </div>
+                <div class="tool-card" data-category="calculator">
+                    <div class="tool-icon">
+                        <i class="fas fa-calculator"></i>
+                    </div>
+                    <h3>GPA Calculator</h3>
+                    <p>Calculate your GPA and CGPA</p>
+                    <a href="#academic-calculator" class="btn outline-btn">Use Tool</a>
+                </div>
+                <div class="tool-card" data-category="converter">
+                    <div class="tool-icon">
+                        <i class="fas fa-exchange-alt"></i>
+                    </div>
+                    <h3>Unit Converter</h3>
+                    <p>Convert between different units</p>
+                    <a href="#unit-converter" class="btn outline-btn">Use Tool</a>
+                </div>
+                <div class="tool-card" data-category="citation">
+                    <div class="tool-icon">
+                        <i class="fas fa-quote-right"></i>
+                    </div>
+                    <h3>Citation Generator</h3>
+                    <p>Generate properly formatted citations</p>
+                    <a href="#citation-generator" class="btn outline-btn">Use Tool</a>
+                </div>
+                <div class="tool-card" data-category="calculator">
+                    <div class="tool-icon">
+                        <i class="fas fa-percent"></i>
+                    </div>
+                    <h3>Percentage Calculator</h3>
+                    <p>Calculate percentages and conversions</p>
+                    <a href="#academic-calculator" class="btn outline-btn">Use Tool</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Admin Upload Section -->
+    <section class="admin-upload-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Admin Upload</h2>
+                <p>Upload new resources to the platform (Admin access required)</p>
+            </div>
+            <div class="admin-login-form">
+                <div class="form-group">
+                    <label for="admin-username">Username</label>
+                    <input type="text" id="admin-username" placeholder="Enter admin username">
+                </div>
+                <div class="form-group">
+                    <label for="admin-password">Password</label>
+                    <input type="password" id="admin-password" placeholder="Enter admin password">
+                </div>
+                <button class="btn primary-btn admin-login-btn">Login</button>
+            </div>
+            <div class="admin-upload-form" style="display: none;">
+                <div class="form-group">
+                    <label>Resource Type</label>
+                    <select id="resource-type">
+                        <option value="pyq">Previous Year Question Paper</option>
+                        <option value="study">Study Material</option>
+                        <option value="other">Other Resource</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Title</label>
+                    <input type="text" id="resource-title" placeholder="Enter resource title">
+                </div>
+                <div class="form-group">
+                    <label>Description</label>
+                    <textarea id="resource-description" placeholder="Enter resource description"></textarea>
+                </div>
+                <div class="form-group">
+                    <label>Category/Subject</label>
+                    <input type="text" id="resource-category" placeholder="Enter category or subject">
+                </div>
+                <div class="form-group">
+                    <label>File Upload</label>
+                    <input type="file" id="resource-file">
+                </div>
+                <div class="form-group">
+                    <label>Tags (comma separated)</label>
+                    <input type="text" id="resource-tags" placeholder="e.g. physics, mechanics, undergraduate">
+                </div>
+                <button class="btn primary-btn upload-resource-btn">Upload Resource</button>
+            </div>
+        </div>
+    </section>
+    
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Can't Find What You're Looking For?</h2>
+                <p>Request specific resources or tools through our feedback form, and we'll try to add them to our platform.</p>
+                <div class="cta-buttons">
+                    <a href="feedback.html" class="btn primary-btn">Submit Request</a>
+                    <a href="#" class="btn outline-btn">Contact Support</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer Section -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h2>QUARYNOX</h2>
+                    <p>Your ultimate educational resource platform providing PYQ downloads, study materials, and academic tools.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <div class="link-group">
+                        <h3>Quick Links</h3>
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="about.html">About Us</a></li>
+                            <li><a href="services.html">Services</a></li>
+                            <li><a href="tools.html">Tools</a></li>
+                            <li><a href="feedback.html">Feedback</a></li>
+                        </ul>
+                    </div>
+                    <div class="link-group">
+                        <h3>Tool Links</h3>
+                        <ul>
+                            <li><a href="#pyq-downloader">PYQ Downloader</a></li>
+                            <li><a href="#study-materials">Study Materials</a></li>
+                            <li><a href="#academic-calculator">Academic Calculator</a></li>
+                            <li><a href="#unit-converter">Unit Converter</a></li>
+                            <li><a href="#citation-generator">Citation Generator</a></li>
+                        </ul>
+                    </div>
+                    <div class="link-group">
+                        <h3>Support</h3>
+                        <ul>
+                            <li><a href="#">FAQ</a></li>
+                            <li><a href="#">Contact Us</a></li>
+                            <li><a href="#">Privacy Policy</a></li>
+                            <li><a href="#">Terms of Service</a></li>
+                            <li><a href="#">Sitemap</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 QUARYNOX. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+</body>
+</html>

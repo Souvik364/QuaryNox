@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="QUARYNOX Feedback - Share your thoughts, suggestions, and report issues to help us improve our academic tools platform">
+    <meta name="keywords" content="QUARYNOX feedback, academic tools feedback, student feedback, education platform feedback, report issues">
+    <title>Feedback - QUARYNOX</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <h1>QUARYNOX</h1>
+                </a>
+            </div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="tools.html">Tools</a></li>
+                    <li><a href="feedback.html" class="active">Feedback</a></li>
+                </ul>
+                <div class="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Page Banner -->
+    <section class="page-banner">
+        <div class="container">
+            <h1>Share Your Feedback</h1>
+            <p>Help us improve our platform by sharing your thoughts, suggestions, and reporting issues</p>
+        </div>
+    </section>
+
+    <!-- Feedback Form Section -->
+    <section class="feedback-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>We Value Your Input</h2>
+                <p>Your feedback helps us enhance our tools and services to better meet your academic needs</p>
+            </div>
+            <div class="feedback-container">
+                <div class="feedback-tabs">
+                    <button class="tab-btn active" data-tab="general">General Feedback</button>
+                    <button class="tab-btn" data-tab="bug">Report Issue</button>
+                    <button class="tab-btn" data-tab="feature">Feature Request</button>
+                    <button class="tab-btn" data-tab="content">Content Request</button>
+                </div>
+                <div class="feedback-content">
+                    <!-- General Feedback Form -->
+                    <div class="feedback-tab active" id="general-feedback">
+                        <h3>General Feedback</h3>
+                        <p>Share your overall experience with our platform</p>
+                        <form class="feedback-form">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="name">Name</label>
+                                    <input type="text" id="name" placeholder="Your Name" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">Email</label>
+                                    <input type="email" id="email" placeholder="Your Email" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="subject">Subject</label>
+                                <input type="text" id="subject" placeholder="Feedback Subject" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="feedback-type">Feedback Type</label>
+                                <select id="feedback-type" required>
+                                    <option value="">Select Feedback Type</option>
+                                    <option value="compliment">Compliment</option>
+                                    <option value="suggestion">Suggestion</option>
+                                    <option value="complaint">Complaint</option>
+                                    <option value="question">Question</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="rating">Rate Your Experience</label>
+                                <div class="rating-stars">
+                                    <i class="far fa-star" data-rating="1"></i>
+                                    <i class="far fa-star" data-rating="2"></i>
+                                    <i class="far fa-star" data-rating="3"></i>
+                                    <i class="far fa-star" data-rating="4"></i>
+                                    <i class="far fa-star" data-rating="5"></i>
+                                    <span class="rating-text">0/5</span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Your Feedback</label>
+                                <textarea id="message" rows="6" placeholder="Please share your feedback in detail..." required></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="attachment">Attachment (optional)</label>
+                                <input type="file" id="attachment">
+                                <p class="file-info">Max file size: 5MB. Supported formats: JPG, PNG, PDF</p>
+                            </div>
+                            <div class="form-group checkbox-group">
+                                <input type="checkbox" id="subscribe" name="subscribe">
+                                <label for="subscribe">Subscribe to our newsletter for updates</label>
+                            </div>
+                            <div class="form-group checkbox-group">
+                                <input type="checkbox" id="terms" name="terms" required>
+                                <label for="terms">I agree to the <a href="#">Terms and Conditions</a> and <a href="#">Privacy Policy</a></label>
+                            </div>
+                            <button type="submit" class="btn primary-btn">Submit Feedback</button>
+                        </form>
+                    </div>
+
+                    <!-- Report Issue Form -->
+                    <div class="feedback-tab" id="bug-feedback">
+                        <h3>Report an Issue</h3>
+                        <p>Help us identify and fix problems by reporting issues you encounter</p>
+                        <form class="feedback-form">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="bug-name">Name</label>
+                                    <input type="text" id="bug-name" placeholder="Your Name" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="bug-email">Email</label>
+                                    <input type="email" id="bug-email" placeholder="Your Email" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="bug-tool">Tool/Page with Issue</label>
+                                <select id="bug-tool" required>
+                                    <option value="">Select Tool/Page</option>
+                                    <option value="pyq">PYQ Downloader</option>
+                                    <option value="notes">Study Materials</option>
+                                    <option value="calculator">Academic Calculator</option>
+                                    <option value="converter">Unit Converter</option>
+                                    <option value="citation">Citation Generator</option>
+                                    <option value="home">Home Page</option>
+                                    <option value="about">About Page</option>
+                                    <option value="services">Services Page</option>
+                                    <option value="tools">Tools Page</option>
+                                    <option value="feedback">Feedback Page</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="bug-severity">Issue Severity</label>
+                                <select id="bug-severity" required>
+                                    <option value="">Select Severity</option>
+                                    <option value="critical">Critical - Completely Unusable</option>
+                                    <option value="major">Major - Significant Impact</option>
+                                    <option value="minor">Minor - Small Impact</option>
+                                    <option value="cosmetic">Cosmetic - Visual Issue Only</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="bug-title">Issue Title</label>
+                                <input type="text" id="bug-title" placeholder="Brief description of the issue" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="bug-description">Issue Description</label>
+                                <textarea id="bug-description" rows="6" placeholder="Please describe the issue in detail..." required></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="bug-steps">Steps to Reproduce</label>
+                                <textarea id="bug-steps" rows="4" placeholder="List the steps to reproduce this issue..." required></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="bug-expected">Expected Behavior</label>
+                                <textarea id="bug-expected" rows="2" placeholder="What did you expect to happen?" required></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="bug-actual">Actual Behavior</label>
+                                <textarea id="bug-actual" rows="2" placeholder="What actually happened?" required></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="bug-browser">Browser/Device Information</label>
+                                <input type="text" id="bug-browser" placeholder="e.g., Chrome 98.0, Windows 10" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="bug-attachment">Screenshots/Attachments (optional)</label>
+                                <input type="file" id="bug-attachment" multiple>
+                                <p class="file-info">Max file size: 5MB per file. Supported formats: JPG, PNG, PDF, GIF</p>
+                            </div>
+                            <div class="form-group checkbox-group">
+                                <input type="checkbox" id="bug-terms" name="bug-terms" required>
+                                <label for="bug-terms">I agree to the <a href="#">Terms and Conditions</a> and <a href="#">Privacy Policy</a></label>
+                            </div>
+                            <button type="submit" class="btn primary-btn">Submit Issue Report</button>
+                        </form>
+                    </div>
+
+                    <!-- Feature Request Form -->
+                    <div class="feedback-tab" id="feature-feedback">
+                        <h3>Feature Request</h3>
+                        <p>Suggest new features or improvements to enhance our platform</p>
+                        <form class="feedback-form">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="feature-name">Name</label>
+                                    <input type="text" id="feature-name" placeholder="Your Name" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="feature-email">Email</label>
+                                    <input type="email" id="feature-email" placeholder="Your Email" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="feature-title">Feature Title</label>
+                                <input type="text" id="feature-title" placeholder="Brief title for your feature request" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="feature-category">Feature Category</label>
+                                <select id="feature-category" required>
+                                    <option value="">Select Category</option>
+                                    <option value="new-tool">New Tool</option>
+                                    <option value="existing-tool">Improvement to Existing Tool</option>
+                                    <option value="ui-ux">UI/UX Enhancement</option>
+                                    <option value="content">Content Addition</option>
+                                    <option value="integration">Integration with Other Services</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="feature-description">Feature Description</label>
+                                <textarea id="feature-description" rows="6" placeholder="Please describe your feature request in detail..." required></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="feature-benefit">Benefits of this Feature</label>
+                                <textarea id="feature-benefit" rows="4" placeholder="How would this feature benefit users?" required></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="feature-priority">Priority Level</label>
+                                <select id="feature-priority" required>
+                                    <option value="">Select Priority</option>
+                                    <option value="critical">Critical - Needed Immediately</option>
+                                    <option value="high">High - Important Feature</option>
+                                    <option value="medium">Medium - Would Be Nice to Have</option>
+                                    <option value="low">Low - Consider for Future</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="feature-attachment">Mockups/Attachments (optional)</label>
+                                <input type="file" id="feature-attachment" multiple>
+                                <p class="file-info">Max file size: 5MB per file. Supported formats: JPG, PNG, PDF, GIF</p>
+                            </div>
+                            <div class="form-group checkbox-group">
+                                <input type="checkbox" id="feature-terms" name="feature-terms" required>
+                                <label for="feature-terms">I agree to the <a href="#">Terms and Conditions</a> and <a href="#">Privacy Policy</a></label>
+                            </div>
+                            <button type="submit" class="btn primary-btn">Submit Feature Request</button>
+                        </form>
+                    </div>
+
+                    <!-- Content Request Form -->
+                    <div class="feedback-tab" id="content-feedback">
+                        <h3>Content Request</h3>
+                        <p>Request specific academic content or resources to be added to our platform</p>
+                        <form class="feedback-form">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="content-name">Name</label>
+                                    <input type="text" id="content-name" placeholder="Your Name" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="content-email">Email</label>
+                                    <input type="email" id="content-email" placeholder="Your Email" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="content-title">Content Title</label>
+                                <input type="text" id="content-title" placeholder="Title of the content you're requesting" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="content-type">Content Type</label>
+                                <select id="content-type" required>
+                                    <option value="">Select Content Type</option>
+                                    <option value="pyq">Previous Year Question Paper</option>
+                                    <option value="notes">Study Notes/Materials</option>
+                                    <option value="solution">Problem Solutions</option>
+                                    <option value="guide">Study Guide</option>
+                                    <option value="book">Book/Reference</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="content-subject">Subject/Course</label>
+                                <input type="text" id="content-subject" placeholder="e.g., Physics, Computer Science, Economics" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="content-university">University/Board (if applicable)</label>
+                                <input type="text" id="content-university" placeholder="e.g., Delhi University, CBSE">
+                            </div>
+                            <div class="form-group">
+                                <label for="content-year">Year/Semester (if applicable)</label>
+                                <input type="text" id="content-year" placeholder="e.g., 2022, 3rd Semester">
+                            </div>
+                            <div class="form-group">
+                                <label for="content-description">Content Description</label>
+                                <textarea id="content-description" rows="6" placeholder="Please describe the content you're requesting in detail..." required></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="content-reason">Reason for Request</label>
+                                <textarea id="content-reason" rows="4" placeholder="Why do you need this content? How will it help you?" required></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="content-reference">Reference Links (optional)</label>
+                                <textarea id="content-reference" rows="2" placeholder="Any reference links where we might find this content"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="content-attachment">Reference Attachments (optional)</label>
+                                <input type="file" id="content-attachment" multiple>
+                                <p class="file-info">Max file size: 5MB per file. Supported formats: JPG, PNG, PDF</p>
+                            </div>
+                            <div class="form-group checkbox-group">
+                                <input type="checkbox" id="content-terms" name="content-terms" required>
+                                <label for="content-terms">I agree to the <a href="#">Terms and Conditions</a> and <a href="#">Privacy Policy</a></label>
+                            </div>
+                            <button type="submit" class="btn primary-btn">Submit Content Request</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials-section alt-bg">
+        <div class="container">
+            <div class="section-header">
+                <h2>What Our Users Say</h2>
+                <p>Feedback from students and educators who have used our platform</p>
+            </div>
+            <div class="testimonials-slider">
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>"QUARYNOX has been an invaluable resource for my studies. The PYQ Downloader tool helped me prepare effectively for my exams, and the study materials are comprehensive and well-structured."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-image">
+                            <img src="images/testimonial-1.jpg" alt="Rahul Sharma">
+                        </div>
+                        <div class="author-info">
+                            <h4>Rahul Sharma</h4>
+                            <p>B.Tech Student, Delhi University</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>"As a professor, I recommend QUARYNOX to all my students. The platform offers a wide range of academic tools that enhance the learning experience. The citation generator is particularly useful for research papers."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-image">
+                            <img src="images/testimonial-2.jpg" alt="Dr. Priya Patel">
+                        </div>
+                        <div class="author-info">
+                            <h4>Dr. Priya Patel</h4>
+                            <p>Professor, Mumbai University</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>"The academic calculator and unit converter tools have been extremely helpful for my engineering coursework. QUARYNOX has significantly improved my productivity and academic performance."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-image">
+                            <img src="images/testimonial-3.jpg" alt="Ananya Gupta">
+                        </div>
+                        <div class="author-info">
+                            <h4>Ananya Gupta</h4>
+                            <p>M.Tech Student, IIT Bombay</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-navigation">
+                <button class="nav-btn prev-btn"><i class="fas fa-chevron-left"></i></button>
+                <div class="nav-dots">
+                    <span class="dot active"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                </div>
+                <button class="nav-btn next-btn"><i class="fas fa-chevron-right"></i></button>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Frequently Asked Questions</h2>
+                <p>Find answers to common questions about our feedback process</p>
+            </div>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>How long does it take to process feedback?</h3>
+                        <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We typically review and process all feedback within 2-3 business days. For urgent issues or critical bug reports, we prioritize them and aim to respond within 24 hours.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Will I receive a response to my feedback?</h3>
+                        <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes, we respond to all feedback submissions. You will receive an acknowledgment email immediately after submission, followed by a more detailed response once your feedback has been reviewed by our team.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>How are feature requests evaluated?</h3>
+                        <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Feature requests are evaluated based on several factors including user demand, technical feasibility, alignment with our platform goals, and potential impact on user experience. We maintain a feature request backlog and prioritize them for future development cycles.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Can I track the status of my feedback or request?</h3>
+                        <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes, you can track the status of your feedback or request by logging into your QUARYNOX account and visiting the "My Feedback" section. If you submitted feedback without an account, you can use the reference number provided in your acknowledgment email to check the status.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>How can I provide additional information for my submitted feedback?</h3>
+                        <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>If you need to provide additional information for your submitted feedback, you can reply to the acknowledgment email you received or use the reference number to update your submission through our feedback portal.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section alt-bg">
+        <div class="container">
+            <div class="section-header">
+                <h2>Contact Us Directly</h2>
+                <p>Have questions or need assistance? Reach out to our support team</p>
+            </div>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="info-content">
+                            <h3>Email</h3>
+                            <p>support@quarynox.com</p>
+                            <p>feedback@quarynox.com</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <div class="info-content">
+                            <h3>Phone</h3>
+                            <p>+91 1234567890</p>
+                            <p>Mon-Fri, 9:00 AM - 6:00 PM</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="info-content">
+                            <h3>Address</h3>
+                            <p>123 Education Lane, Knowledge Park</p>
+                            <p>New Delhi, India - 110001</p>
+                        </div>
+                    </div>
+                    <div class="social-links">
+                        <h3>Connect With Us</h3>
+                        <div class="social-icons">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fab fa-youtube"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form-container">
+                    <h3>Quick Message</h3>
+                    <form class="contact-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="contact-name">Name</label>
+                                <input type="text" id="contact-name" placeholder="Your Name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="contact-email">Email</label>
+                                <input type="email" id="contact-email" placeholder="Your Email" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="contact-subject">Subject</label>
+                            <input type="text" id="contact-subject" placeholder="Message Subject" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="contact-message">Message</label>
+                            <textarea id="contact-message" rows="5" placeholder="Your Message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn primary-btn">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h2>QUARYNOX</h2>
+                    <p>Your ultimate academic resource platform</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <div class="link-group">
+                        <h3>Quick Links</h3>
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="about.html">About</a></li>
+                            <li><a href="services.html">Services</a></li>
+                            <li><a href="tools.html">Tools</a></li>
+                            <li><a href="feedback.html">Feedback</a></li>
+                        </ul>
+                    </div>
+                    <div class="link-group">
+                        <h3>Tools</h3>
+                        <ul>
+                            <li><a href="tools.html#pyq">PYQ Downloader</a></li>
+                            <li><a href="tools.html#notes">Study Materials</a></li>
+                            <li><a href="tools.html#calculator">Academic Calculator</a></li>
+                            <li><a href="tools.html#converter">Unit Converter</a></li>
+                            <li><a href="tools.html#all">View All</a></li>
+                        </ul>
+                    </div>
+                    <div class="link-group">
+                        <h3>Support</h3>
+                        <ul>
+                            <li><a href="#">Contact Us</a></li>
+                            <li><a href="#">FAQ</a></li>
+                            <li><a href="#">Privacy Policy</a></li>
+                            <li><a href="#">Terms of Service</a></li>
+                            <li><a href="#">Admin Login</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 QUARYNOX. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/script.js"></script>
+</body>
+</html>
