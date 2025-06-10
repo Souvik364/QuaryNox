@@ -1351,16 +1351,14 @@
 
         // Download paper
         function downloadPaper(paper) {
-            // Create a blob from the paper content
-            const blob = new Blob([paper.content], { type: 'text/plain' });
-            
-            // Create a temporary URL for the blob
-            const url = URL.createObjectURL(blob);
-            
-            // Create a temporary link element
-            const a = document.createElement('a');
-            a.href = url;
-            a.download = paper.file;
+    // Open actual file link
+    if (paper.file && paper.file.startsWith("http")) {
+        window.open(paper.file, "_blank");
+        showToast(`Redirecting to: ${paper.title}`, 'info');
+    } else {
+        showToast("Invalid or missing file link", "error");
+    }
+        }
             
             // Append the link to the body and click it
             document.body.appendChild(a);
