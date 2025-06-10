@@ -45,24 +45,27 @@
         </div>
     </header>
     
-    <!-- Mobile Navigation -->
-    <div class="mobile-nav">
-        <div class="mobile-nav-header">
-            <div class="logo">
-                <h1>QUARYNOX</h1>
-            </div>
-            <div class="close-menu-btn">
-                <i class="fas fa-times"></i>
-            </div>
-        </div>
-        <ul class="mobile-nav-links">
-            <li><a href="index.html" class="active">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="services.html">Services</a></li>
-            <li><a href="tools.html">Tools</a></li>
-            <li><a href="feedback.html">Feedback</a></li>
-        </ul>
+    <!-- Menu Toggle Button (visible only on mobile) -->
+<div class="menu-toggle md:hidden">
+  <i class="fas fa-bars" id="openMenuBtn"></i>
+</div>
+
+<!-- Mobile Navigation -->
+<div class="mobile-nav fixed top-0 left-0 w-full h-full bg-white z-50 hidden">
+  <div class="mobile-nav-header flex justify-between items-center p-4 border-b">
+    <h1 class="text-xl font-bold">QUARYNOX</h1>
+    <div class="close-menu-btn cursor-pointer" id="closeMenuBtn">
+      <i class="fas fa-times"></i>
     </div>
+  </div>
+  <ul class="mobile-nav-links flex flex-col gap-4 p-4 text-lg">
+    <li><a href="index.html" class="active">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="services.html">Services</a></li>
+    <li><a href="tools.html">Tools</a></li>
+    <li><a href="feedback.html">Feedback</a></li>
+  </ul>
+</div>
     
     <!-- Hero Section -->
     <section class="hero-section">
